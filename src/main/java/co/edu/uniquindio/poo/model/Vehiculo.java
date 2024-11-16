@@ -4,10 +4,10 @@ public class Vehiculo {
     
     private String marca , modelo, placa;
     private boolean nuevoUsado, transmision;
-    private double velocidadmax, cilindraje;
+    private double velocidadmax, cilindraje, precio;
 
-
-    public Vehiculo(String marca, String modelo, String placa, boolean nuevoUsado, boolean transmision, double velocidadmax, double cilindraje) {
+    public Vehiculo(String marca, String modelo, String placa, boolean nuevoUsado, boolean transmision,
+            double velocidadmax, double cilindraje, double precio) {
         this.marca = marca;
         this.modelo = modelo;
         this.placa = placa;
@@ -15,7 +15,9 @@ public class Vehiculo {
         this.transmision = transmision;
         this.velocidadmax = velocidadmax;
         this.cilindraje = cilindraje;
+        this.precio = precio;
     }
+
 
     public String getMarca() {
         return marca;
@@ -84,6 +86,16 @@ public class Vehiculo {
 
     public void setCilindraje(double cilindraje) {
         this.cilindraje = cilindraje;
+    }
+
+
+    public double getPrecio() {
+        return precio;
+    }
+
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
     }
 
 
