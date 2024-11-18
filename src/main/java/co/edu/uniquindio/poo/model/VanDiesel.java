@@ -1,19 +1,24 @@
-package co.edu.uniquindio.poo.model;
+/**package co.edu.uniquindio.poo.model;
 
-public class VanDiesel {
+
+
+public class VanDiesel extends VehiculoDiesel {
     
     private double capacidadMaletero;
     private int numPuertas, numBolsas;
-    private boolean aireAcondicionado, camTrasera, abs;
-    
-    public VanDiesel(double capacidadMaletero, int numPuertas, int numBolsas, boolean aireAcondicionado,
-            boolean camTrasera, boolean abs) {
+}
+    /**private ComboBox aireAcondicionado, camTrasera, abs;
+    public VanDiesel(String marca, String modelo, String placa, ComboBox nuevoUsado, ComboBox transmision,
+            double velocidadmax, double cilindraje, double precio, ComboBox aireAcondicionado, ComboBox abs,
+            double capacidadMaletero, int numPuertas, int numBolsas, ComboBox aireAcondicionado2, ComboBox camTrasera,
+            ComboBox abs2) {
+        super(marca, modelo, placa, nuevoUsado, transmision, velocidadmax, cilindraje, precio, aireAcondicionado, abs);
         this.capacidadMaletero = capacidadMaletero;
         this.numPuertas = numPuertas;
         this.numBolsas = numBolsas;
-        this.aireAcondicionado = aireAcondicionado;
+        aireAcondicionado = aireAcondicionado2;
         this.camTrasera = camTrasera;
-        this.abs = abs;
+        abs = abs2;
     }
     public double getCapacidadMaletero() {
         return capacidadMaletero;
@@ -33,24 +38,26 @@ public class VanDiesel {
     public void setNumBolsas(int numBolsas) {
         this.numBolsas = numBolsas;
     }
-    public boolean isAireAcondicionado() {
+    public ComboBox getAireAcondicionado() {
         return aireAcondicionado;
     }
-    public void setAireAcondicionado(boolean aireAcondicionado) {
+    public void setAireAcondicionado(ComboBox aireAcondicionado) {
         this.aireAcondicionado = aireAcondicionado;
     }
-    public boolean isCamTrasera() {
+    public ComboBox getCamTrasera() {
         return camTrasera;
     }
-    public void setCamTrasera(boolean camTrasera) {
+    public void setCamTrasera(ComboBox camTrasera) {
         this.camTrasera = camTrasera;
     }
-    public boolean isAbs() {
+    public ComboBox getAbs() {
         return abs;
     }
-    public void setAbs(boolean abs) {
+    public void setAbs(ComboBox abs) {
         this.abs = abs;
     }
+    
 
     
 }
+/**/

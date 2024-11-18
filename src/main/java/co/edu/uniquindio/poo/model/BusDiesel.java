@@ -1,13 +1,19 @@
+
 package co.edu.uniquindio.poo.model;
 
-public class BusDiesel {
-    
-    private int numeroEjes, numSalidasEmergencias, numPasajero, numPuertas, numBolsas;
-    private double capaMaletero;
-    private boolean camaraReversa;
 
-    public BusDiesel(int numeroEjes, int numSalidasEmergencias, int numPasajero, int numPuertas, int numBolsas,
-            double capaMaletero, boolean camaraReversa) {
+
+public class BusDiesel extends VehiculoDiesel{
+    
+    private double numeroEjes, numSalidasEmergencias, numPasajero, numPuertas, numBolsas;
+    private double capaMaletero;
+    
+    private String camaraReversa;
+    public BusDiesel(String marca, String modelo, String placa, String nuevoUsado, String transmision,
+            double velocidadmax, double cilindraje, double precio, String aireAcondicionado, String abs,
+            double numeroEjes, double numSalidasEmergencias, double numPasajero, double numPuertas, double numBolsas,
+            double capaMaletero, String camaraReversa) {
+        super(marca, modelo, placa, nuevoUsado, transmision, velocidadmax, cilindraje, precio, aireAcondicionado, abs);
         this.numeroEjes = numeroEjes;
         this.numSalidasEmergencias = numSalidasEmergencias;
         this.numPasajero = numPasajero;
@@ -16,63 +22,47 @@ public class BusDiesel {
         this.capaMaletero = capaMaletero;
         this.camaraReversa = camaraReversa;
     }
-
-
-    public int getNumPasajero() {
+    public double getNumeroEjes() {
+        return numeroEjes;
+    }
+    public void setNumeroEjes(double numeroEjes) {
+        this.numeroEjes = numeroEjes;
+    }
+    public double getNumSalidasEmergencias() {
+        return numSalidasEmergencias;
+    }
+    public void setNumSalidasEmergencias(double numSalidasEmergencias) {
+        this.numSalidasEmergencias = numSalidasEmergencias;
+    }
+    public double getNumPasajero() {
         return numPasajero;
     }
-
-    public void setNumPasajero(int numPasajero) {
+    public void setNumPasajero(double numPasajero) {
         this.numPasajero = numPasajero;
     }
-
-    public int getNumPuertas() {
+    public double getNumPuertas() {
         return numPuertas;
     }
-
-    public void setNumPuertas(int numPuertas) {
+    public void setNumPuertas(double numPuertas) {
         this.numPuertas = numPuertas;
     }
-
-    public int getNumBolsas() {
+    public double getNumBolsas() {
         return numBolsas;
     }
-
-    public void setNumBolsas(int numBolsas) {
+    public void setNumBolsas(double numBolsas) {
         this.numBolsas = numBolsas;
     }
-
     public double getCapaMaletero() {
         return capaMaletero;
     }
-
     public void setCapaMaletero(double capaMaletero) {
         this.capaMaletero = capaMaletero;
     }
-
-    public boolean isCamaraReversa() {
+    public String getCamaraReversa() {
         return camaraReversa;
     }
-
-    public void setCamaraReversa(boolean camaraReversa) {
+    public void setCamaraReversa(String camaraReversa) {
         this.camaraReversa = camaraReversa;
     }
 
-    public int getNumeroEjes() {
-        return numeroEjes;
-    }
-
-    public void setNumeroEjes(int numeroEjes) {
-        this.numeroEjes = numeroEjes;
-    }
-
-    public int getNumSalidasEmergencias() {
-        return numSalidasEmergencias;
-    }
-
-    public void setNumSalidasEmergencias(int numSalidasEmergencias) {
-        this.numSalidasEmergencias = numSalidasEmergencias;
-    }
-
-    
 }

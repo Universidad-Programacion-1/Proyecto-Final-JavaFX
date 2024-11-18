@@ -1,31 +1,35 @@
 package co.edu.uniquindio.poo.model;
 
-public class VehiculoDiesel {
 
-    private boolean aireAcondicionado, abs;
 
-    
-    public VehiculoDiesel(boolean aireAcondicionado, boolean abs) {
+public class VehiculoDiesel extends Vehiculo {
+
+    private String aireAcondicionado, abs;
+
+    public VehiculoDiesel(String marca, String modelo, String placa, String nuevoUsado, String transmision,
+            double velocidadmax, double cilindraje, double precio, String aireAcondicionado, String abs) {
+        super(marca, modelo, placa, nuevoUsado, transmision, velocidadmax, cilindraje, precio);
         this.aireAcondicionado = aireAcondicionado;
         this.abs = abs;
     }
 
-    public boolean isAireAcondicionado() {
+    public String getAireAcondicionado() {
         return aireAcondicionado;
     }
 
-
-    public void setAireAcondicionado(boolean aireAcondicionado) {
+    public void setAireAcondicionado(String aireAcondicionado) {
         this.aireAcondicionado = aireAcondicionado;
     }
 
-
-    public boolean isAbs() {
+    public String getAbs() {
         return abs;
     }
 
-
-    public void setAbs(boolean abs) {
+    public void setAbs(String abs) {
         this.abs = abs;
     }
-}
+
+
+    }
+
+

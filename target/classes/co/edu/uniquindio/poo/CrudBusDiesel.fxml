@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="744.0" prefWidth="1099.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.VehiculoElectricoViewController">
+   <children>
+      <SplitPane layoutX="-1.0" layoutY="1.0" orientation="VERTICAL" prefHeight="766.0" prefWidth="1105.0" style="-fx-border-color: blue;">
+         <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="762.0" prefWidth="1075.0">
+               <children>
+                  <Pane layoutX="14.0" layoutY="14.0" prefHeight="424.0" prefWidth="1093.0" style="-fx-border-image-width: 1px;">
+                     <effect>
+                        <Blend />
+                     </effect>
+                     <children>
+                        <Label layoutX="459.0" prefHeight="53.0" prefWidth="269.0" text="Bus Diesel" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="155.0" layoutY="100.0" prefHeight="27.0" prefWidth="62.0" text="Marca">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="155.0" layoutY="140.0" prefHeight="27.0" prefWidth="62.0" text="Modelo">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtPlaca" layoutX="318.0" layoutY="60.0" prefHeight="27.0" prefWidth="163.0" style="-fx-border-color: black;" />
+                        <TextField fx:id="txtMarca" layoutX="318.0" layoutY="100.0" prefHeight="27.0" prefWidth="163.0" style="-fx-border-color: black;" />
+                        <TextField fx:id="txtModelo" layoutX="318.0" layoutY="140.0" prefHeight="27.0" prefWidth="163.0" style="-fx-border-color: black;" />
+                        <Label layoutX="155.0" layoutY="60.0" prefHeight="27.0" prefWidth="97.0" text="Placa">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtPrecio" layoutX="318.0" layoutY="180.0" prefHeight="27.0" prefWidth="163.0" style="-fx-border-color: black;" />
+                        <Label layoutX="155.0" layoutY="180.0" text="Precio">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="153.0" layoutY="220.0" prefHeight="27.0" prefWidth="106.0" text="Cilindraje">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtCilindraje" layoutX="318.0" layoutY="220.0" prefHeight="27.0" prefWidth="163.0" style="-fx-border-color: black;" />
+                        <TextField fx:id="txtVelocidadMaxima" layoutX="318.0" layoutY="261.0" prefHeight="27.0" prefWidth="163.0" style="-fx-border-color: black;" />
+                        <Label layoutX="-3.0" layoutY="261.0" text=" " textAlignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="comboTipoCamion" layoutX="830.0" layoutY="61.0" prefHeight="25.0" prefWidth="119.0" />
+                        <Label layoutX="622.0" layoutY="60.0" prefHeight="27.0" prefWidth="116.0" text="TipoCamion">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="comboNuevoUsado" layoutX="830.0" layoutY="101.0" prefHeight="25.0" prefWidth="119.0" />
+                        <ComboBox fx:id="comboTransmision" layoutX="830.0" layoutY="141.0" prefHeight="25.0" prefWidth="119.0" />
+                        <Label layoutX="622.0" layoutY="100.0" prefHeight="27.0" prefWidth="128.0" text="NuevoUsado">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="621.0" layoutY="140.0" text="Transmision">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="622.0" layoutY="185.0" text="abs">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="622.0" layoutY="220.0" text="camReversa">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="comboabs" layoutX="830.0" layoutY="186.0" prefHeight="25.0" prefWidth="119.0" />
+                        <ComboBox fx:id="combocamReversa" layoutX="830.0" layoutY="221.0" prefHeight="25.0" prefWidth="119.0" />
+                        <Label layoutX="153.0" layoutY="261.0" text="VelocidadMaxima">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btAtras" layoutX="1045.0" layoutY="-13.0" onAction="#onOpenMenu" prefHeight="7.0" prefWidth="46.0" style="-fx-border-color: BLACK; -fx-background-color: reD;" styleClass="B" text="X" textAlignment="CENTER" />
+                        <Label layoutX="155.0" layoutY="303.0" text="numeroDeEjes">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtNumeroDeEjes" layoutX="318.0" layoutY="303.0" prefHeight="27.0" prefWidth="163.0" style="-fx-border-color: black;" />
+                        <Label layoutX="144.0" layoutY="374.0" text="numeroDePasajeros">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="114.0" layoutY="339.0" text="numSalidaDeEmergencias">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="623.0" layoutY="261.0" text="numeroDePuertas">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtnumeroDePasajeros" layoutX="318.0" layoutY="374.0" prefHeight="27.0" prefWidth="163.0" style="-fx-border-color: black;" />
+                        <TextField fx:id="txtnumSalidasDeEmergencias" layoutX="318.0" layoutY="339.0" prefHeight="27.0" prefWidth="163.0" style="-fx-border-color: black;" />
+                        <Label layoutX="623.0" layoutY="297.0" text="numeroDeBolsas">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtnumeroDeBolas" layoutX="796.0" layoutY="297.0" prefHeight="27.0" prefWidth="163.0" style="-fx-border-color: black;" />
+                        <TextField fx:id="txtnumeroDePuertas" layoutX="796.0" layoutY="261.0" prefHeight="27.0" prefWidth="163.0" style="-fx-border-color: black;" />
+                     </children>
+                  </Pane>
+                  <TableView fx:id="tblListBus" layoutX="-4.0" layoutY="525.0" prefHeight="175.0" prefWidth="1105.0">
+                    <columns>
+                      <TableColumn fx:id="tbcCNumeroMatricula" prefWidth="71.0" text="Placa" />
+                      <TableColumn fx:id="tbcCMarca" minWidth="6.0" prefWidth="73.0" text="Marca" />
+                        <TableColumn fx:id="tbcCModelo" minWidth="0.0" text="Modelo" />
+                        <TableColumn fx:id="tbcCargaTonelasdas" minWidth="0.0" prefWidth="0.0" text="Carga en Toneladas" />
+                        <TableColumn fx:id="tbcCPrecio" prefWidth="43.0" text="Precio" />
+                        <TableColumn fx:id="tbcCilindraje" prefWidth="54.0" text="Cilindrje" />
+                        <TableColumn fx:id="tbcCVelocidadMaxima" prefWidth="83.0" text="VelocidadMax" />
+                        <TableColumn fx:id="tbcCCuatroXcuatro" prefWidth="66.0" text="numeroDeEjes" />
+                        <TableColumn fx:id="tbcCabs" prefWidth="45.0" text="abs" />
+                        <TableColumn fx:id="tbcCcamReversa" prefWidth="75.0" text="camReversa" />
+                        <TableColumn fx:id="tbcCTransmision" prefWidth="71.0" text="Transmision" />
+                        <TableColumn fx:id="tbcCNuevoUsado" prefWidth="82.0" text="NuevoUsado" />
+                        <TableColumn fx:id="tbcCnumDePasajeros" prefWidth="79.0" text="numDePasajeros" />
+                        <TableColumn fx:id="tbcCnumeroDePuertas" prefWidth="69.0" text="numeroDePuertas" />
+                        <TableColumn fx:id="tbcCnumeroDeBolsas" prefWidth="108.0" text="numeroDeBolsas" />
+                        <TableColumn fx:id="tbcCnumSalidasDeEmergencia" prefWidth="105.0" text="numSalidasDeEmergencia" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="btnEliminar" layoutX="600.0" layoutY="708.0" mnemonicParsing="false" onAction="#onEliminar" prefHeight="25.0" prefWidth="97.0" style="-fx-border-color: black;" text="Eliminar">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnLimpiar" layoutX="325.0" layoutY="708.0" mnemonicParsing="false" onAction="#onLimpiar" prefHeight="25.0" prefWidth="106.0" style="-fx-border-color: black;" text="Limpiar">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btbAgregarBus" layoutX="127.0" layoutY="457.0" mnemonicParsing="false" onAction="#onAgregarBus" prefHeight="44.0" prefWidth="152.0" style="-fx-border-color: black;" text="Agregar Bus">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnVenderBus" layoutX="582.0" layoutY="457.0" mnemonicParsing="false" onAction="#onVenderBus" prefHeight="44.0" prefWidth="152.0" style="-fx-border-color: black;" text="vender Bus" textAlignment="CENTER">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnActualizarBus" layoutX="350.0" layoutY="457.0" mnemonicParsing="false" onAction="#onActualizarBus" prefHeight="44.0" prefWidth="163.0" style="-fx-border-color: black;" text="Actualizar Bus " textAlignment="CENTER">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnComprarBus" layoutX="817.0" layoutY="457.0" mnemonicParsing="false" onAction="#onComprarBus" prefHeight="44.0" prefWidth="152.0" style="-fx-border-color: black;" text="Comprar Bus" textAlignment="CENTER">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
