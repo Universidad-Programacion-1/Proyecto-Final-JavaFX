@@ -1,48 +1,53 @@
 package co.edu.uniquindio.poo.model;
 
-public abstract class VehiculoHibrido {
-    
-    private boolean enchufable;
-    private int numBolsas, numPasajero, numPuerta;
+import javafx.scene.control.ComboBox;
 
-    public VehiculoHibrido(boolean enchufable, int numBolsas, int numPasajero, int numPuerta) {
+public abstract class VehiculoHibrido extends Vehiculo  {
+    
+    private String enchufable;
+    private String tipoHibrido;
+    private Double numBolsas, numPasajero, numPuerta;
+    public VehiculoHibrido(String marca, String modelo, String placa, String nuevoUsado, String transmision,
+            double velocidadmax, double cilindraje, double precio, String enchufable, String tipoHibrido,
+            Double numBolsas, Double numPasajero, Double numPuerta) {
+        super(marca, modelo, placa, nuevoUsado, transmision, velocidadmax, cilindraje, precio);
         this.enchufable = enchufable;
+        this.tipoHibrido = tipoHibrido;
         this.numBolsas = numBolsas;
         this.numPasajero = numPasajero;
         this.numPuerta = numPuerta;
     }
-
-    public boolean isEnchufable() {
+    public String getEnchufable() {
         return enchufable;
     }
-
-    public void setEnchufable(boolean enchufable) {
+    public void setEnchufable(String enchufable) {
         this.enchufable = enchufable;
     }
-
-    public int getNumBolsas() {
+    public String getTipoHibrido() {
+        return tipoHibrido;
+    }
+    public void setTipoHibrido(String tipoHibrido) {
+        this.tipoHibrido = tipoHibrido;
+    }
+    public Double getNumBolsas() {
         return numBolsas;
     }
-
-    public void setNumBolsas(int numBolsas) {
+    public void setNumBolsas(Double numBolsas) {
         this.numBolsas = numBolsas;
     }
-
-    public int getNumPasajero() {
+    public Double getNumPasajero() {
         return numPasajero;
     }
-
-    public void setNumPasajero(int numPasajero) {
+    public void setNumPasajero(Double numPasajero) {
         this.numPasajero = numPasajero;
     }
-
-    public int getNumPuerta() {
+    public Double getNumPuerta() {
         return numPuerta;
     }
-
-    public void setNumPuerta(int numPuerta) {
+    public void setNumPuerta(Double numPuerta) {
         this.numPuerta = numPuerta;
     }
+    
 
-    public abstract boolean definirEnchufe();
+    
 }

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="CENTER" prefHeight="230.0" prefWidth="323.0" spacing="20.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.SubMenuVehiculoGasolinaViewController">
+   <children>
+      <Pane prefHeight="235.0" prefWidth="283.0">
+         <children>
+            <Label fx:id="txtTitleVehiculo" graphicTextGap="5.0" layoutX="59.0" layoutY="5.0" prefHeight="63.0" prefWidth="193.0" text="Tipo de Vehiculo" textAlignment="RIGHT">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="btAtras" layoutX="246.0" layoutY="-12.0" onAction="#onOpenMenu" prefHeight="7.0" prefWidth="46.0" style="-fx-border-color: BLACK; -fx-background-color: reD;" styleClass="B" text="X" textAlignment="CENTER" />
+            <Button fx:id="btMotoGaso" layoutX="39.0" layoutY="91.0" onAction="#onOpenCrudMotoGasolina" prefHeight="33.0" prefWidth="206.0" style="-fx-border-color: black;" text="Moto Gasolina">
+               <font>
+                  <Font size="15.0" />
+               </font></Button>
+            <Button fx:id="btVanGaso" layoutX="39.0" layoutY="150.0" onAction="#onOpenCrudVanGasolina" prefHeight="33.0" prefWidth="206.0" style="-fx-border-color: black;" text="Van Gasolina">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>

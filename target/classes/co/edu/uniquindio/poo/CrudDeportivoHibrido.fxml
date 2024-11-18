@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="741.0" prefWidth="1194.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.DeportivoHibridoViewController">
+   <children>
+      <SplitPane dividerPositions="0.5" layoutX="6.0" orientation="VERTICAL" prefHeight="841.0" prefWidth="1183.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="438.0" prefWidth="858.0">
+               <children>
+                  <Pane layoutY="-3.0" prefHeight="500.0" prefWidth="1181.0" style="-fx-border-image-width: 1px;">
+                     <effect>
+                        <Blend />
+                     </effect>
+                     <children>
+                        <Label layoutX="333.0" layoutY="40.0" text="Vehiculo Deportivo">
+                           <font>
+                              <Font name="System Bold" size="64.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="119.0" layoutY="166.0" prefHeight="17.0" prefWidth="64.0" text="Placa:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="119.0" layoutY="203.0" text="Marca:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="105.0" layoutY="238.0" text="Modelo:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtPlaca" layoutX="173.0" layoutY="164.0" prefHeight="31.0" prefWidth="168.0" />
+                        <TextField fx:id="txtModelo" layoutX="173.0" layoutY="236.0" prefHeight="31.0" prefWidth="168.0" />
+                        <TextField fx:id="txtMarca" layoutX="173.0" layoutY="201.0" prefHeight="31.0" prefWidth="168.0" />
+                        <Label layoutX="744.0" layoutY="195.0" text="Estado:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtVelocidadMax" layoutX="546.0" layoutY="164.0" prefHeight="31.0" prefWidth="78.0" />
+                        <ComboBox fx:id="cbxNuevoUsado" layoutX="809.0" layoutY="196.0" prefHeight="31.0" prefWidth="168.0" promptText="Estado Vehiculo" />
+                        <Label layoutX="703.0" layoutY="157.0" text="Transmisión:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="cbxTransmision" layoutX="809.0" layoutY="155.0" prefHeight="31.0" prefWidth="168.0" promptText="Caja del Vehiculo" />
+                        <Label layoutX="423.0" layoutY="166.0" text="Velocidad Max:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="94.0" layoutY="277.0" text="Cilindraje:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtCilindraje" layoutX="173.0" layoutY="276.0" prefHeight="31.0" prefWidth="168.0" />
+                        <Label layoutX="18.0" layoutY="317.0" text="Caballos de Fuerza:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtCaballoFuerza" layoutX="173.0" layoutY="317.0" prefHeight="31.0" prefWidth="168.0" />
+                        <Label layoutX="374.0" layoutY="203.0" text="Numero de Pasajeros:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtNumPasajero" layoutX="546.0" layoutY="201.0" prefHeight="31.0" prefWidth="78.0" />
+                        <Label layoutX="386.0" layoutY="235.0" text="Numero de Puertas:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtNumPuertas" layoutX="546.0" layoutY="235.0" prefHeight="31.0" prefWidth="78.0" />
+                        <Label layoutX="426.0" layoutY="267.0" text="Bolsas de Aire:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtNumBolsas" layoutX="546.0" layoutY="266.0" prefHeight="31.0" prefWidth="78.0" />
+                        <Label layoutX="717.0" layoutY="235.0" text="Enchufable:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="cbxEnchufable" layoutX="809.0" layoutY="236.0" prefHeight="31.0" prefWidth="168.0" promptText="Enchufable" />
+                        <Label layoutX="701.0" layoutY="277.0" text="Tipo Hibrido:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="cbxTipoHibrido" layoutX="809.0" layoutY="276.0" prefHeight="31.0" prefWidth="168.0" promptText="Tipo de Hibrido" />
+                        <Button fx:id="btnActualizarDeportivoHibrido" layoutX="664.0" layoutY="376.0" mnemonicParsing="false" onAction="#onActualizarDeportivoHibrido" text="Actualizar Deportivo" />
+                        <Button fx:id="btbAgregarDeportivoHibrido" layoutX="397.0" layoutY="376.0" mnemonicParsing="false" onAction="#onAgregarDeportivoHibrido" text="Agregar Deportivo" />
+                        <Button fx:id="dtnAtras" layoutX="1122.0" layoutY="21.0" mnemonicParsing="false" onAction="#onOpenMenu" prefHeight="37.0" prefWidth="44.0" style="-fx-background-color: red; -fx-border-color: black;" text="X" />
+                        <Button fx:id="btnVender" layoutX="929.0" layoutY="376.0" mnemonicParsing="false" onAction="#onVender" text="Vender " />
+                        <Label layoutX="493.0" layoutY="336.0" text="Precio:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtPrecio" layoutX="546.0" layoutY="334.0" prefHeight="31.0" prefWidth="78.0" />
+                        <Label layoutX="389.0" layoutY="304.0" text="Tiempo de 0 a 100:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtVelocidad0a100" layoutX="546.0" layoutY="302.0" prefHeight="31.0" prefWidth="78.0" />
+                        <Button fx:id="btnComprar" layoutX="135.0" layoutY="376.0" mnemonicParsing="false" onAction="#onComprar" text="Comprar" />
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="342.0" prefWidth="1181.0">
+               <children>
+                  <TableView fx:id="tblListDeportivoHibrido" layoutX="7.0" layoutY="1.0" prefHeight="253.0" prefWidth="1173.0">
+                    <columns>
+                      <TableColumn fx:id="tbcPlaca" prefWidth="55.0" text="Placa" />
+                      <TableColumn fx:id="tbcMarca" prefWidth="58.0" text="Marca" />
+                        <TableColumn fx:id="tbcModelo" prefWidth="72.0" text="Modelo" />
+                        <TableColumn fx:id="tbcCilindraje" prefWidth="91.0" text="Cilindraje" />
+                        <TableColumn fx:id="tbcCaballoFuerza" prefWidth="63.0" text="Fuerza" />
+                        <TableColumn fx:id="tbcVelocidadMax" prefWidth="77.0" text="MaxVelocidad" />
+                        <TableColumn fx:id="tbcNumPasajero" text="Pasajeros" />
+                        <TableColumn fx:id="tbcPuertas" prefWidth="71.0" text="Puertas" />
+                        <TableColumn fx:id="tbcBolsasAire" prefWidth="100.0" text="Bolsas de aire" />
+                        <TableColumn fx:id="tbcTiempo0a100" prefWidth="106.0" text="Tiempo 0 a 100" />
+                        <TableColumn fx:id="tbcEstado" prefWidth="66.0" text="Estado" />
+                        <TableColumn fx:id="tbcEnchufable" prefWidth="91.0" text="Enchufable" />
+                        <TableColumn fx:id="tbcTipoHibrido" prefWidth="55.0" text="Tipo" />
+                        <TableColumn fx:id="tbcTransmision" prefWidth="102.0" text="Transmisión" />
+                        <TableColumn fx:id="tbcPrecio" prefWidth="85.0" text="Precio" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="btnLimpiarDeportivoHibrido" layoutX="344.0" layoutY="264.0" mnemonicParsing="false" onAction="#onLimpiarDeportivoHibrido" prefHeight="25.0" prefWidth="106.0" text="Limpiar" />
+                  <Button fx:id="btnEliminarDeportivoHibrido" layoutX="695.0" layoutY="264.0" mnemonicParsing="false" onAction="#onEliminarDeportivoHibrido" prefHeight="25.0" prefWidth="97.0" text="Eliminar" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
