@@ -7,6 +7,9 @@ public abstract class VehiculoHibrido extends Vehiculo  {
     private String enchufable;
     private String tipoHibrido;
     private Double numBolsas, numPasajero, numPuerta;
+    
+    
+    
     public VehiculoHibrido(String marca, String modelo, String placa, String nuevoUsado, String transmision,
             double velocidadmax, double cilindraje, double precio, String enchufable, String tipoHibrido,
             Double numBolsas, Double numPasajero, Double numPuerta) {

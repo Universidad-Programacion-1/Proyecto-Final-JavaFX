@@ -5,9 +5,13 @@ import javafx.scene.control.ComboBox;
 public class Vehiculo {
     
     private String marca , modelo, placa;
+
     private String nuevoUsado; 
     private String transmision;
     private double velocidadmax, cilindraje, precio;
+
+    
+
     public Vehiculo(String marca, String modelo, String placa, String nuevoUsado, String transmision,
             double velocidadmax, double cilindraje, double precio) {
         this.marca = marca;
@@ -67,13 +71,6 @@ public class Vehiculo {
     public void setPrecio(double precio) {
         this.precio = precio;
     }
-
-
-
-    
-
-
-    
 
 
     

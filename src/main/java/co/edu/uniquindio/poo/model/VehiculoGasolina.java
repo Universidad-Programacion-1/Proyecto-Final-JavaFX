@@ -6,7 +6,6 @@ public class VehiculoGasolina extends Vehiculo{
     
     private double galonesGasolina;
 
-    
 
     public VehiculoGasolina(String marca, String modelo, String placa, String nuevoUsado, String transmision,
             double velocidadmax, double cilindraje, double precio, double galonesGasolina) {
