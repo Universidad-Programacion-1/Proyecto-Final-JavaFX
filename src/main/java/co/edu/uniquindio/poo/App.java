@@ -8,13 +8,9 @@ import javafx.scene.layout.VBox;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import java.io.IOException;
-import java.time.LocalDate;
-
-import co.edu.uniquindio.poo.controller.DeportivoHibridoController;
-import co.edu.uniquindio.poo.controller.VanGasolinaController;
-import co.edu.uniquindio.poo.model.Cliente;
 import co.edu.uniquindio.poo.model.Consecionario;
-import co.edu.uniquindio.poo.model.VanGasolina;
+import co.edu.uniquindio.poo.model.Empleado;
+import co.edu.uniquindio.poo.model.Vehiculo;
 import co.edu.uniquindio.poo.viewController.DeportivoHibridoViewController;
 import co.edu.uniquindio.poo.viewController.MenuVehiculoViewController;
 import co.edu.uniquindio.poo.viewController.MotoGasolinaViewController;
@@ -23,8 +19,7 @@ import co.edu.uniquindio.poo.viewController.SubMenuVehiculoGasolinaViewControlle
 import co.edu.uniquindio.poo.viewController.SubMenuVehiculoHibridoViewController;
 import co.edu.uniquindio.poo.viewController.VanGasolinaViewController;
 import co.edu.uniquindio.poo.model.Admin;
-import co.edu.uniquindio.poo.model.Consecionario;
-import co.edu.uniquindio.poo.model.Empleado;
+import co.edu.uniquindio.poo.model.Cliente;
 import co.edu.uniquindio.poo.viewController.AdminViewController;
 import co.edu.uniquindio.poo.viewController.ClienteViewController;
 import co.edu.uniquindio.poo.viewController.EmpleadoViewController;
@@ -214,6 +209,7 @@ public class App extends Application {
     }
 
     public void openMenuAdmin() {
+        inicializarData2();
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(App.class.getResource("MenuAdmin.fxml"));
@@ -253,8 +249,8 @@ public class App extends Application {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(App.class.getResource("MenuCliente.fxml"));
             AnchorPane rootLayout = (AnchorPane) loader.load();
-            MenuClienteViewController clienteViewController = loader.getController();
-            clienteViewController.setApp(this);
+            MenuClienteViewController menuClienteViewController = loader.getController();
+            menuClienteViewController.setApp(this);
 
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
@@ -267,9 +263,19 @@ public class App extends Application {
 
     public void inicializarData(){
         Admin admin = new Admin("12345", "carlos", "3213232", "escobar");
-        //Empleado empleado = new Empleado("123", "carlos", "3213232", "234");
+        Empleado empleado = new Empleado("123", "carlos", "3213232", "234");
+        //Vehiculo vehiculo = new Vehiculo("Platino", "2023", "123", "Nuevo", "Manual", 125, 5000000, 5);
+        Cliente cliente = new Cliente("12", "12", "3213232", "234");
         consecionario.crearAdmin(admin);
+        consecionario.agregarEmpleado(empleado);
+        //consecionario.agregarVehiculo(vehiculo);
+        consecionario.agregarCliente(cliente);
         //consecionario.agregarEmpleado(empleado);
+    }
+    public void inicializarData2(){
+        // Empleado empleado = new Empleado("123", "carlos", "3213232", "234");
+        // consecionario.agregarEmpleado(empleado);
+        // //consecionario.agregarEmpleado(empleado);
     }
 
     public void openCrudAdmin() {

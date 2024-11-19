@@ -8,16 +8,12 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import co.edu.uniquindio.poo.App;
 import co.edu.uniquindio.poo.controller.MotoGasolinaController;
-import co.edu.uniquindio.poo.controller.VanGasolinaController;
-import co.edu.uniquindio.poo.model.Cliente;
 import co.edu.uniquindio.poo.model.MotoGasolina;
-import co.edu.uniquindio.poo.model.VanGasolina;
 import co.edu.uniquindio.poo.model.Vehiculo;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.control.ComboBox;
 
 
 public class MotoGasolinaViewController {
@@ -124,12 +120,12 @@ public class MotoGasolinaViewController {
 
     @FXML
     void onVender() {
-
+        agregarMotoGasolina();
     }
 
     @FXML
     void onComprar() {
-
+        comprarVehiculo();
     }
 
     @FXML
@@ -151,6 +147,25 @@ public class MotoGasolinaViewController {
 
         initView();
     }
+
+    private void comprarVehiculo() {
+        Vehiculo motoGasolina = buildVehiculo();
+        if (motoGasolinaController.comprarVehiculo(motoGasolina)) {
+            listMotoGasolinas.remove(motoGasolina);
+            limpiarCamposMotoGasolina();
+        }
+    }
+
+    private MotoGasolina buildVehiculo() {
+        MotoGasolina motoGasolina = new MotoGasolina(txtMarca.getText(), txtModelo.getText(), txtPlaca.getText(), cbxNuevoUsado.getValue(), cbxTransmision.getValue(), Double.parseDouble(txtVelocidadMax.getText()), Double.parseDouble(txtCilindraje.getText()), Double.parseDouble(txtPrecio.getText()), Double.parseDouble(txtTanque.getText()));
+        return motoGasolina;
+    }
+    // private void listenerSelectionComprar() {
+    //     tblListMotoGasolina.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+    //         selectedMotoGasolina = newSelection;
+    //         comprarVehiculo(newSelection);
+    //     });
+    // }
 
     private void initView() {
         // Traer los datos del cliente a la tabla

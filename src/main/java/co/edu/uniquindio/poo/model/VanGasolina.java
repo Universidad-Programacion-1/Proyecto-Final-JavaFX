@@ -1,6 +1,5 @@
 package co.edu.uniquindio.poo.model;
 
-import javafx.scene.control.ComboBox;
 
 public class VanGasolina extends VehiculoGasolina {
     

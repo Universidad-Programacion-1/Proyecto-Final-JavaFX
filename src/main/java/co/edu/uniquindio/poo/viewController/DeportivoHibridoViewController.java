@@ -10,6 +10,7 @@ import co.edu.uniquindio.poo.App;
 import co.edu.uniquindio.poo.controller.DeportivoHibridoController;
 import co.edu.uniquindio.poo.controller.DeportivoHibridoController;
 import co.edu.uniquindio.poo.model.DeportivoHibrido;
+import co.edu.uniquindio.poo.model.MotoGasolina;
 import co.edu.uniquindio.poo.model.VanGasolina;
 import co.edu.uniquindio.poo.model.Vehiculo;
 import javafx.beans.property.SimpleObjectProperty;
@@ -160,12 +161,12 @@ public class DeportivoHibridoViewController {
 
     @FXML
     void onVender() {
-
+        agregarDeportivoHibrido();
     }
 
     @FXML
     void onComprar() {
-
+        comprarVehiculo();
     }
 
     @FXML
@@ -186,6 +187,19 @@ public class DeportivoHibridoViewController {
        cbxTransmision.getItems().addAll("Automatica", "Manual");
 
         initView();
+    }
+
+    private void comprarVehiculo() {
+        Vehiculo deportivoHibrido = buildVehiculo();
+        if (deportivoHibridoController.comprarVehiculo(deportivoHibrido)) {
+            listDeportivoHibridos.remove(deportivoHibrido);
+            limpiarCamposDeportivoHibrido();
+        }
+    }
+
+    private DeportivoHibrido buildVehiculo() {
+        DeportivoHibrido deportivoHibrido = new DeportivoHibrido(txtMarca.getText(), txtModelo.getText(), txtPlaca.getText(), cbxNuevoUsado.getValue(), cbxTransmision.getValue(), Double.parseDouble(txtVelocidadMax.getText()), Double.parseDouble(txtCilindraje.getText()), Double.parseDouble(txtPrecio.getText()), cbxEnchufable.getValue(), cbxTipoHibrido.getValue(), Double.parseDouble(txtNumBolsas.getText()), Double.parseDouble(txtNumPasajero.getText()), Double.parseDouble(txtNumPuertas.getText()), Double.parseDouble(txtCaballoFuerza.getText()), Double.parseDouble(txtVelocidad0a100.getText()));
+        return deportivoHibrido;
     }
 
     private void initView() {

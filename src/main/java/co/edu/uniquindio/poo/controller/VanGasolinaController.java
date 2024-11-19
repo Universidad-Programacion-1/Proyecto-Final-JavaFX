@@ -5,6 +5,7 @@ import java.util.Collection;
 import co.edu.uniquindio.poo.App;
 import co.edu.uniquindio.poo.model.Consecionario;
 import co.edu.uniquindio.poo.model.VanGasolina;
+import co.edu.uniquindio.poo.model.Vehiculo;
 
 public class VanGasolinaController {
 
@@ -30,4 +31,7 @@ public class VanGasolinaController {
        return consecionario.actualizarVanGasolina(placa, vanGasolina);
     }
     
+    public boolean comprarVehiculo(Vehiculo vehiculo){
+        return consecionario.crearCompraMoto(vehiculo);
+    }
 }

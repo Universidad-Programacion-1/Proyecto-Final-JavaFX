@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 public class MenuVehiculoViewController {
+    
     App app;
 
     @FXML
@@ -28,7 +29,7 @@ public class MenuVehiculoViewController {
 
     @FXML
     void onOpenMenu() {
-
+        app.openMenuAdmin();
     }
 
     @FXML
@@ -45,7 +46,6 @@ public class MenuVehiculoViewController {
 
     @FXML
     void onOpenCrudSubMenuVehiculoElectrico() {
-
     }
 
     @FXML

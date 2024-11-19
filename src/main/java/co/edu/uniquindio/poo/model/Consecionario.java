@@ -10,6 +10,7 @@ public class Consecionario {
     private Collection<Cliente> clientes;
     int tipoPersona;
     private String nombre;
+    private Collection<Vehiculo> vehiculos;
     private Collection<DeportivoHibrido> deportivoHibridos;
     private Collection<PickUpHibrido> pickUpHibridos;
     private Collection<MotoGasolina> motoGasolinas;
@@ -26,6 +27,7 @@ public class Consecionario {
         this.admins = new LinkedList<>();
         this.empleados = new LinkedList<>();
         this.clientes = new LinkedList<>();
+        this.vehiculos = new LinkedList<>();
         //personas = new LinkedList<>();
     }
 
@@ -35,17 +37,28 @@ public class Consecionario {
         return nombre;
     }
 
-
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+
+    public Collection<Vehiculo> getVehiculos() {
+        System.out.println("GetVehiculo"+vehiculos);
+        return vehiculos;
+    }
+
+    public void setVehiculos(Collection<Vehiculo> vehiculos) {
+        this.vehiculos = vehiculos;
+    }
+
+
 
     public boolean crearAdmin(Admin admin) {
         System.out.println(admin);
         boolean centinela = false;
         if (!verificarAdmin(admin.getId())) {
             admins.add(admin);
+            admin1=admin;
             centinela = true;
         }
         return centinela;
@@ -120,13 +133,13 @@ public class Consecionario {
                 admin1 = admin;
             }
         }
-        for (Cliente cliente : clientes) {
+        for (Cliente cliente : listarClientes()) {
             if (cliente.getGmail().equals(correo) && cliente.getId().equals(contrasena)) {
                 tipo = 1;
                 tipoPersona = tipo;
             }
         }
-        for (Empleado empleado : admin1.getEmpleados()) {
+        for (Empleado empleado : listarEmpleados()) {
             if (empleado.getGmail().equals(correo) && empleado.getId().equals(contrasena)) {
                 tipo = 2;
                 tipoPersona = tipo;
@@ -151,6 +164,19 @@ public class Consecionario {
         return admin1.getClientes();
     }
 
+    public boolean crearCompraMoto(Vehiculo vehiculo){
+        boolean centinela = false;
+        if (eliminarMotoGasolina(vehiculo.getPlaca())) {
+            agregarVehiculo(vehiculo);
+            centinela = true;
+        }
+        return centinela;
+    }
+    public void agregarVehiculo(Vehiculo vehiculo){
+        vehiculos.add(vehiculo);
+        System.err.println("Lista DE CONSESIONARIO "+ vehiculo);
+        System.err.println("Lista DE CONSESIONARIO "+ vehiculos);
+    }
     // public Collection<Cliente> listarClientesE(){
     //     return empleado1.getClientes();
     // }
@@ -158,7 +184,7 @@ public class Consecionario {
     public boolean agregarEmpleado(Empleado empleado){
         boolean centinela=false;
         if (admin1.crearEmpleado(empleado)) {
-            // empleados.add(empleado);
+            empleado1 = empleado;
             centinela = true;
         }
         return centinela;
@@ -211,13 +237,14 @@ public class Consecionario {
     
     public boolean agregarCliente(Cliente cliente){
         boolean centinela=false;
+        if (tipoPersona == 3) {
+            if (admin1.crearCliente(cliente)) {
+                centinela = true;   
+            }
+        }
         if (tipoPersona == 2) {
             if (empleado1.crearCliente(cliente)) {
                 centinela = true;
-            }
-        }else if (tipoPersona == 3) {
-            if (admin1.crearCliente(cliente)) {
-                centinela = true;   
             }
         }
         return centinela;

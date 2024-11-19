@@ -4,7 +4,9 @@ import co.edu.uniquindio.poo.App;
 import co.edu.uniquindio.poo.controller.DeportivoHibridoController;
 import co.edu.uniquindio.poo.controller.PickUpHibridoController;
 import co.edu.uniquindio.poo.model.DeportivoHibrido;
+import co.edu.uniquindio.poo.model.MotoGasolina;
 import co.edu.uniquindio.poo.model.PickUpHibrido;
+import co.edu.uniquindio.poo.model.Vehiculo;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -176,12 +178,12 @@ public class PickUpHibridoViewController {
 
     @FXML
     void onVender() {
-
+        agregarPickUpHibrido();
     }
 
     @FXML
     void onComprar() {
-
+        comprarVehiculo();
     }
 
     @FXML
@@ -208,6 +210,19 @@ public class PickUpHibridoViewController {
        cbxAireAcondicionado.getItems().addAll("Si", "No");
 
         initView();
+    }
+
+    private void comprarVehiculo() {
+        Vehiculo pickUpHibrido = buildVehiculo();
+        if (pickUpHibridoController.comprarVehiculo(pickUpHibrido)) {
+            listPickUpHibridos.remove(pickUpHibrido);
+            limpiarCamposPickUpHibrido();
+        }
+    }
+
+    private PickUpHibrido buildVehiculo() {
+        PickUpHibrido pickUpHibrido = new PickUpHibrido(txtMarca.getText(), txtModelo.getText(), txtPlaca.getText(), cbxNuevoUsado.getValue(), cbxTransmision.getValue(), Double.parseDouble(txtVelocidadMax.getText()), Double.parseDouble(txtCilindraje.getText()), Double.parseDouble(txtPrecio.getText()), cbxEnchufable.getValue(), cbxTipoHibrido.getValue(), Double.parseDouble(txtNumBolsas.getText()), Double.parseDouble(txtNumPasajero.getText()), Double.parseDouble(txtNumPuertas.getText()), cbx4x4.getValue(), cbxAireAcondicionado.getValue(), cbxCamReversa.getValue(), cbxAbs.getValue(), Double.parseDouble(txtCapacidadCarga.getText()));
+        return pickUpHibrido;
     }
 
     private void initView() {

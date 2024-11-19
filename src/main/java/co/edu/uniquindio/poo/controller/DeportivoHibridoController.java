@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import co.edu.uniquindio.poo.model.Consecionario;
 import co.edu.uniquindio.poo.model.DeportivoHibrido;
+import co.edu.uniquindio.poo.model.Vehiculo;
 
 public class DeportivoHibridoController {
 
@@ -27,5 +28,9 @@ public class DeportivoHibridoController {
 
     public boolean actualizarDeportivoHibrido(String placa, DeportivoHibrido deportivoHibrido) {
        return consecionario.actualizarDeportivoHibrido(placa, deportivoHibrido);
+    }
+
+    public boolean comprarVehiculo(Vehiculo vehiculo){
+        return consecionario.crearCompraMoto(vehiculo);
     }
 }

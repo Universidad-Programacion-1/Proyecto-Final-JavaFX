@@ -19,4 +19,8 @@ public class Cliente extends Persona{
     public void setVehiculos(Collection<Vehiculo> vehiculos) {
         this.vehiculos = vehiculos;
     }
+
+    public void agregarVehiculo(Vehiculo vehiculo){
+        vehiculos.add(vehiculo);
+    }
 }

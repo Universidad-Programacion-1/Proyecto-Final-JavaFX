@@ -2,7 +2,7 @@ package co.edu.uniquindio.poo.viewController;
 
 import co.edu.uniquindio.poo.App;
 import co.edu.uniquindio.poo.controller.VanGasolinaController;
-import co.edu.uniquindio.poo.model.Cliente;
+import co.edu.uniquindio.poo.model.MotoGasolina;
 import co.edu.uniquindio.poo.model.VanGasolina;
 import co.edu.uniquindio.poo.model.Vehiculo;
 import javafx.beans.property.SimpleObjectProperty;
@@ -12,7 +12,6 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -157,7 +156,7 @@ public class VanGasolinaViewController {
 
     @FXML
     void onVender() {
-
+        actualizarVanGasolina();
     }
 
     @FXML
@@ -171,6 +170,11 @@ public class VanGasolinaViewController {
         eliminarVanGasolina();
 
     }
+
+    @FXML
+    void onComprar() {
+        comprarVehiculo();
+    }
     
     @FXML
     void initialize() {
@@ -182,6 +186,19 @@ public class VanGasolinaViewController {
        cbxTransmision.getItems().addAll("Automatica", "Manual");
 
         initView();
+    }
+
+    private void comprarVehiculo() {
+        Vehiculo motoGasolina = buildVehiculo();
+        if (vanGasolinaController.comprarVehiculo(motoGasolina)) {
+            listVanGasolinas.remove(motoGasolina);
+            limpiarCamposVanGasolina();
+        }
+    }
+
+    private VanGasolina buildVehiculo() {
+        VanGasolina vanGasolina = new VanGasolina(txtMarca.getText(), txtModelo.getText(), txtPlaca.getText(), cbxNuevoUsado.getValue(), cbxTransmision.getValue(), Double.parseDouble(txtVelocidadMax.getText()), Double.parseDouble(txtCilindraje.getText()), Double.parseDouble(txtPrecio.getText()), Double.parseDouble(txtTanque.getText()), Double.parseDouble(txtCapacidadMaletero.getText()), Double.parseDouble(txtNumPuertas.getText()), Double.parseDouble(txtNumBolsas.getText()), cbxAireAcondicionado.getValue(), cbxCamTrasera.getValue(), cbxAbs.getValue());
+        return vanGasolina;
     }
 
     private void initView() {
