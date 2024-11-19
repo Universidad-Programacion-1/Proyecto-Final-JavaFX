@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="387.0" prefWidth="879.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.MenuClienteViewController">
+   <children>
+   <Label fx:id="btnAtras" layoutX="825.0" layoutY="6.0" onMouseClicked="#onIniciaeSesion" prefHeight="32.0" prefWidth="54.0" text="Log out" textFill="#e11010" />
+      <TableView fx:id="tblListVehiculosCliente" layoutX="25.0" layoutY="108.0" prefHeight="253.0" prefWidth="835.0">
+         <columns>
+            <TableColumn fx:id="tbcPlaca" prefWidth="75.0" text="Placa" />
+            <TableColumn fx:id="tbcMarca" prefWidth="83.0" text="Marca" />
+            <TableColumn fx:id="tbcModelo" prefWidth="76.0" text="Modelo" />
+            <TableColumn fx:id="tbcCilindraje" prefWidth="102.0" text="Cilindraje" />
+            <TableColumn fx:id="tbcVelocidadMax" prefWidth="119.0" text="MaxVelocidad" />
+            <TableColumn fx:id="tbcTransmision" prefWidth="127.0" text="Transmisión" />
+            <TableColumn fx:id="tbcEstado" prefWidth="124.0" text="Estado" />
+            <TableColumn fx:id="tbcPrecio" prefWidth="125.0" text="Precio" />
+         </columns>
+      </TableView>
+      <Label fx:id="btnAtras1" layoutX="334.0" layoutY="29.0" onMouseClicked="#onIniciaeSesion" prefHeight="45.0" prefWidth="217.0" text="Menu Clientes" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

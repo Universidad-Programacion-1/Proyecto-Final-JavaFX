@@ -42,6 +42,4 @@ public class Persona {
     public void setPalabraSecreta(String palabraSecreta) {
         this.palabraSecreta = palabraSecreta;
     }
-
-    
 }

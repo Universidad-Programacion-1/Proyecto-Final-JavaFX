@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="741.0" prefWidth="1194.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.PickUpHibridoViewController">
+   <children>
+      <SplitPane dividerPositions="0.5" layoutX="6.0" orientation="VERTICAL" prefHeight="841.0" prefWidth="1183.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="438.0" prefWidth="858.0">
+               <children>
+                  <Pane layoutY="-3.0" prefHeight="500.0" prefWidth="1181.0" style="-fx-border-image-width: 1px;">
+                     <effect>
+                        <Blend />
+                     </effect>
+                     <children>
+                        <Label layoutX="333.0" layoutY="40.0" text="Vehiculo Pick Up">
+                           <font>
+                              <Font name="System Bold" size="64.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="119.0" layoutY="166.0" prefHeight="17.0" prefWidth="64.0" text="Placa:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="119.0" layoutY="203.0" text="Marca:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="105.0" layoutY="238.0" text="Modelo:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtPlaca" layoutX="173.0" layoutY="164.0" prefHeight="31.0" prefWidth="168.0" />
+                        <TextField fx:id="txtModelo" layoutX="173.0" layoutY="236.0" prefHeight="31.0" prefWidth="168.0" />
+                        <TextField fx:id="txtMarca" layoutX="173.0" layoutY="201.0" prefHeight="31.0" prefWidth="168.0" />
+                        <Label layoutX="708.0" layoutY="198.0" text="Estado:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtVelocidadMax" layoutX="546.0" layoutY="164.0" prefHeight="31.0" prefWidth="78.0" />
+                        <ComboBox fx:id="cbxNuevoUsado" layoutX="768.0" layoutY="196.0" prefHeight="31.0" prefWidth="153.0" promptText="Estado Vehiculo" />
+                        <Label layoutX="667.0" layoutY="166.0" text="Transmisión:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="cbxTransmision" layoutX="768.0" layoutY="164.0" prefHeight="31.0" prefWidth="153.0" promptText="Caja del Vehiculo" />
+                        <Label layoutX="423.0" layoutY="166.0" text="Velocidad Max:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="94.0" layoutY="277.0" text="Cilindraje:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtCilindraje" layoutX="173.0" layoutY="276.0" prefHeight="31.0" prefWidth="168.0" />
+                        <Label layoutX="36.0" layoutY="317.0" text="Capacidad Carga:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtCapacidadCarga" layoutX="173.0" layoutY="317.0" prefHeight="31.0" prefWidth="168.0" />
+                        <Label layoutX="374.0" layoutY="203.0" text="Numero de Pasajeros:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtNumPasajero" layoutX="546.0" layoutY="201.0" prefHeight="31.0" prefWidth="78.0" />
+                        <Label layoutX="386.0" layoutY="235.0" text="Numero de Puertas:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtNumPuertas" layoutX="546.0" layoutY="235.0" prefHeight="31.0" prefWidth="78.0" />
+                        <Label layoutX="426.0" layoutY="267.0" text="Bolsas de Aire:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtNumBolsas" layoutX="546.0" layoutY="266.0" prefHeight="31.0" prefWidth="78.0" />
+                        <Label layoutX="675.0" layoutY="235.0" text="Enchufable:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="cbxEnchufable" layoutX="768.0" layoutY="233.0" prefHeight="31.0" prefWidth="153.0" promptText="Enchufable" />
+                        <Label layoutX="665.0" layoutY="277.0" text="Tipo Hibrido:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="cbxTipoHibrido" layoutX="768.0" layoutY="276.0" prefHeight="31.0" prefWidth="153.0" promptText="Tipo de Hibrido" />
+                        <Button fx:id="btnActualizarPickUpHibrido" layoutX="664.0" layoutY="376.0" mnemonicParsing="false" onAction="#onActualizarPickUpHibrido" text="Actualizar Pick Up" />
+                        <Button fx:id="btbAgregarPickUpHibrido" layoutX="397.0" layoutY="376.0" mnemonicParsing="false" onAction="#onAgregarPickUpHibrido" text="Agregar Pick up" />
+                        <Button fx:id="dtnAtras" layoutX="1122.0" layoutY="21.0" mnemonicParsing="false" onAction="#onOpenMenu" prefHeight="37.0" prefWidth="44.0" style="-fx-background-color: red; -fx-border-color: black;" text="X" />
+                        <Button fx:id="btnVender" layoutX="929.0" layoutY="376.0" mnemonicParsing="false" onAction="#onVender" text="Vender " />
+                        <Label layoutX="484.0" layoutY="303.0" text="Precio:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtPrecio" layoutX="546.0" layoutY="301.0" prefHeight="31.0" prefWidth="78.0" />
+                        <Label layoutX="953.0" layoutY="235.0" text="Calefacción:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnComprar" layoutX="135.0" layoutY="376.0" mnemonicParsing="false" onAction="#onComprar" text="Comprar" />
+                        <Label layoutX="737.0" layoutY="317.0" text="4x4:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="cbx4x4" layoutX="768.0" layoutY="315.0" prefHeight="31.0" prefWidth="153.0" promptText="4X4" />
+                        <ComboBox fx:id="cbxAireAcondicionado" layoutX="1056.0" layoutY="233.0" prefHeight="31.0" prefWidth="99.0" promptText="Aire" />
+                        <Label layoutX="925.0" layoutY="166.0" text="Camara Reversa:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="cbxCamReversa" layoutX="1055.0" layoutY="164.0" prefHeight="31.0" prefWidth="99.0" promptText="Camara" />
+                        <Label layoutX="1019.0" layoutY="198.0" text="ABS:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="cbxAbs" layoutX="1055.0" layoutY="201.0" prefHeight="31.0" prefWidth="99.0" promptText="ABS" />
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="342.0" prefWidth="1181.0">
+               <children>
+                  <TableView fx:id="tblListPickUpHibrido" layoutX="7.0" layoutY="1.0" prefHeight="248.0" prefWidth="1173.0">
+                    <columns>
+                      <TableColumn fx:id="tbcPlaca" prefWidth="55.0" text="Placa" />
+                      <TableColumn fx:id="tbcMarca" prefWidth="58.0" text="Marca" />
+                        <TableColumn fx:id="tbcModelo" prefWidth="64.0" text="Modelo" />
+                        <TableColumn fx:id="tbcCilindraje" prefWidth="83.0" text="Cilindraje" />
+                        <TableColumn fx:id="tbcCapaCarga" prefWidth="55.0" text="Carga" />
+                        <TableColumn fx:id="tbcVelocidadMax" prefWidth="61.0" text="MaxVelocidad" />
+                        <TableColumn fx:id="tbcNumPasajero" prefWidth="82.0" text="Pasajeros" />
+                        <TableColumn fx:id="tbcPuertas" prefWidth="64.0" text="Puertas" />
+                        <TableColumn fx:id="tbcBolsasAire" prefWidth="51.0" text="Bolsas de aire" />
+                        <TableColumn fx:id="tbc4Por4" prefWidth="43.0" text="4X4" />
+                        <TableColumn fx:id="tbcEstado" prefWidth="64.0" text="Estado" />
+                        <TableColumn fx:id="tbcEnchufable" prefWidth="96.0" text="Enchufable" />
+                        <TableColumn fx:id="tbcTipoHibrido" prefWidth="57.0" text="Tipo" />
+                        <TableColumn fx:id="tbcTransmision" prefWidth="107.0" text="Transmisión" />
+                        <TableColumn fx:id="tbcCamTrasera" prefWidth="53.0" text="Cam" />
+                        <TableColumn fx:id="tbcAbs" prefWidth="53.0" text="ABS" />
+                        <TableColumn fx:id="tbcAireAcondicionado" prefWidth="53.0" text="Aire" />
+                        <TableColumn fx:id="tbcPrecio" prefWidth="72.0" text="Precio" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="btnLimpiarPickUpHibrido" layoutX="344.0" layoutY="264.0" mnemonicParsing="false" onAction="#onLimpiarPickUpHibrido" prefHeight="25.0" prefWidth="106.0" text="Limpiar" />
+                  <Button fx:id="btnEliminarPickUpHibrido" layoutX="695.0" layoutY="264.0" mnemonicParsing="false" onAction="#onEliminarPickUpHibrido" prefHeight="25.0" prefWidth="97.0" text="Eliminar" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
