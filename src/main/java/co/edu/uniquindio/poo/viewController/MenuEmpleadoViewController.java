@@ -37,7 +37,7 @@ public class MenuEmpleadoViewController {
 
     @FXML
     void onOpenCrudVehiculos() {
-
+        app.openCrudMenuVehiculo();
     }
 
     @FXML

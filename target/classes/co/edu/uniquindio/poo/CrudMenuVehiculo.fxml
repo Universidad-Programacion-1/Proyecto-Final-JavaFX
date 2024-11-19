@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="CENTER" prefHeight="314.0" prefWidth="323.0" spacing="20.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.MenuVehiculoViewController">
+   <children>
+      <Pane prefHeight="274.0" prefWidth="572.0">
+         <children>
+            <Label fx:id="txtTitleCombustible" graphicTextGap="5.0" layoutX="33.0" layoutY="5.0" prefHeight="63.0" prefWidth="250.0" text="Tipo de Combustible">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
+            <Button fx:id="btAtras" layoutX="246.0" layoutY="-12.0" onAction="#onOpenMenu" prefHeight="7.0" prefWidth="46.0" style="-fx-border-color: BLACK; -fx-background-color: reD;" styleClass="B" text="X" textAlignment="CENTER" />
+            <Button fx:id="btVehGasolina" layoutX="75.0" layoutY="68.0" onAction="#onOpenCrudSubMenuVehiculoGasolina" prefHeight="33.0" prefWidth="145.0" style="-fx-border-color: black;" text="Gasolina">
+               <font>
+                  <Font size="15.0" />
+               </font></Button>
+            <Button fx:id="btVehHibrido" layoutX="75.0" layoutY="121.0" onAction="#onOpenCrudSubMenuVehiculoHibrido" prefHeight="33.0" prefWidth="145.0" style="-fx-border-color: black;" text="Hibrido">
+               <font>
+                  <Font size="15.0" />
+               </font></Button>
+            <Button fx:id="btVehElectrico" layoutX="75.0" layoutY="176.0" onAction="#onOpenCrudSubMenuVehiculoElectrico" prefHeight="33.0" prefWidth="145.0" style="-fx-border-color: black;" text="Electrico">
+               <font>
+                  <Font size="15.0" />
+               </font></Button>
+            <Button fx:id="btVehDiesel" layoutX="75.0" layoutY="227.0" onAction="#onOpenCrudSubMenuVehiculoDiesel" prefHeight="33.0" prefWidth="145.0" style="-fx-border-color: black;" text="Diesel">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>

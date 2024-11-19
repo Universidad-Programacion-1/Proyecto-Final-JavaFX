@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="741.0" prefWidth="1194.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.VanGasolinaViewController">
+   <children>
+      <SplitPane dividerPositions="0.5" layoutX="6.0" orientation="VERTICAL" prefHeight="841.0" prefWidth="1183.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="438.0" prefWidth="858.0">
+               <children>
+                  <Pane layoutY="-3.0" prefHeight="500.0" prefWidth="1181.0" style="-fx-border-image-width: 1px;">
+                     <effect>
+                        <Blend />
+                     </effect>
+                     <children>
+                        <Label layoutX="388.0" layoutY="39.0" text="Vehiculo Van">
+                           <font>
+                              <Font name="System Bold" size="64.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="119.0" layoutY="166.0" prefHeight="17.0" prefWidth="64.0" text="Placa:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="119.0" layoutY="203.0" text="Marca:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="105.0" layoutY="238.0" text="Modelo:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtPlaca" layoutX="173.0" layoutY="164.0" prefHeight="31.0" prefWidth="168.0" />
+                        <TextField fx:id="txtModelo" layoutX="173.0" layoutY="236.0" prefHeight="31.0" prefWidth="168.0" />
+                        <TextField fx:id="txtMarca" layoutX="173.0" layoutY="201.0" prefHeight="31.0" prefWidth="168.0" />
+                        <Label layoutX="744.0" layoutY="195.0" text="Estado:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtVelocidadMax" layoutX="546.0" layoutY="164.0" prefHeight="31.0" prefWidth="78.0" />
+                        <ComboBox fx:id="cbxNuevoUsado" layoutX="809.0" layoutY="196.0" prefHeight="31.0" prefWidth="168.0" promptText="Estado Vehiculo" />
+                        <Label layoutX="703.0" layoutY="157.0" text="Transmisión:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="cbxTransmision" layoutX="809.0" layoutY="155.0" prefHeight="31.0" prefWidth="168.0" promptText="Caja del Vehiculo" />
+                        <Label layoutX="388.0" layoutY="166.0" text="Velocidad Max:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="94.0" layoutY="277.0" text="Cilindraje:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtCilindraje" layoutX="173.0" layoutY="276.0" prefHeight="31.0" prefWidth="168.0" />
+                        <Label layoutX="106.0" layoutY="319.0" text="Tanque:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtTanque" layoutX="173.0" layoutY="317.0" prefHeight="31.0" prefWidth="168.0" />
+                        <Label layoutX="383.0" layoutY="201.0" text="Capacidad Maletero:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtCapacidadMaletero" layoutX="546.0" layoutY="201.0" prefHeight="31.0" prefWidth="78.0" />
+                        <Label layoutX="386.0" layoutY="235.0" text="Numero de Puertas:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtNumPuertas" layoutX="546.0" layoutY="235.0" prefHeight="31.0" prefWidth="78.0" />
+                        <Label layoutX="390.0" layoutY="266.0" text="Bolsas de Aire:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtNumBolsas" layoutX="546.0" layoutY="266.0" prefHeight="31.0" prefWidth="78.0" />
+                        <Label layoutX="642.0" layoutY="238.0" text="Aire Acondicionado:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="cbxAireAcondicionado" layoutX="809.0" layoutY="236.0" prefHeight="31.0" prefWidth="168.0" promptText="Contiene Aire" />
+                        <Label layoutX="674.0" layoutY="280.0" text="Camara Trasera:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="cbxCamTrasera" layoutX="809.0" layoutY="276.0" prefHeight="31.0" prefWidth="168.0" promptText="Tiene Camara" />
+                        <Label layoutX="706.0" layoutY="317.0" text="Frenos ABS:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="cbxAbs" layoutX="809.0" layoutY="318.0" prefHeight="31.0" prefWidth="168.0" promptText="Frenos ABS" />
+                        <Button fx:id="btnActualizarVanGasolina" layoutX="664.0" layoutY="376.0" mnemonicParsing="false" onAction="#onActualizarVanGasolina" text="Actualizar Van" />
+                        <Button fx:id="btbAgregarVanGasolina" layoutX="397.0" layoutY="376.0" mnemonicParsing="false" onAction="#onAgregarVanGasolina" text="Agregar Van" />
+                        <Button fx:id="dtnAtras" layoutX="1122.0" layoutY="21.0" mnemonicParsing="false" onAction="#onOpenMenu" prefHeight="37.0" prefWidth="44.0" style="-fx-background-color: red; -fx-border-color: black;" text="X" />
+                        <Button fx:id="btnVender" layoutX="929.0" layoutY="376.0" mnemonicParsing="false" onAction="#onVender" text="Vender " />
+                        <Label layoutX="491.0" layoutY="306.0" text="Precio:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtPrecio" layoutX="546.0" layoutY="302.0" prefHeight="31.0" prefWidth="78.0" />
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="342.0" prefWidth="1181.0">
+               <children>
+                  <TableView fx:id="tblListVanGasolina" layoutX="7.0" layoutY="1.0" prefHeight="253.0" prefWidth="1173.0">
+                    <columns>
+                      <TableColumn fx:id="tbcPlaca" prefWidth="75.0" text="Placa" />
+                      <TableColumn fx:id="tbcMarca" prefWidth="75.0" text="Marca" />
+                        <TableColumn fx:id="tbcModelo" prefWidth="75.0" text="Modelo" />
+                        <TableColumn fx:id="tbcCilindraje" prefWidth="75.0" text="Cilindraje" />
+                        <TableColumn fx:id="tbcTanque" prefWidth="75.0" text="Tanque" />
+                        <TableColumn fx:id="tbcVelocidadMax" prefWidth="75.0" text="MaxVelocidad" />
+                        <TableColumn fx:id="tbcMaletero" prefWidth="75.0" text="Maletero" />
+                        <TableColumn fx:id="tbcPuertas" prefWidth="75.0" text="Puertas" />
+                        <TableColumn fx:id="tbcBolsasAire" prefWidth="114.0" text="Bolsas de aire" />
+                        <TableColumn fx:id="tbcTransmision" prefWidth="99.0" text="Transmisión" />
+                        <TableColumn fx:id="tbcEstado" prefWidth="69.0" text="Estado" />
+                        <TableColumn fx:id="tbcAireAcondicionado" prefWidth="56.0" text="Aire Acondicionado" />
+                        <TableColumn fx:id="tbcCamara" prefWidth="63.0" text="Camara" />
+                        <TableColumn fx:id="tbcAbs" prefWidth="56.0" text="ABS" />
+                        <TableColumn fx:id="tbcPrecio" prefWidth="115.0" text="Precio" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="btnLimpiarVanGasolina" layoutX="344.0" layoutY="264.0" mnemonicParsing="false" onAction="#onLimpiarVanGasolina" prefHeight="25.0" prefWidth="106.0" text="Limpiar" />
+                  <Button fx:id="btnEliminarVanGasolina" layoutX="695.0" layoutY="264.0" mnemonicParsing="false" onAction="#onEliminarVanGasolina" prefHeight="25.0" prefWidth="97.0" text="Eliminar" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

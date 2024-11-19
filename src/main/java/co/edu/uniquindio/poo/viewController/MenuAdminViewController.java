@@ -53,7 +53,7 @@ public class MenuAdminViewController {
 
     @FXML
     void onOpenCrudVehiculos() {
-
+        app.openCrudMenuVehiculo();
     }
 
     @FXML
