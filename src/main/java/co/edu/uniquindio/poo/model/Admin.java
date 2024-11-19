@@ -1,23 +1,23 @@
 package co.edu.uniquindio.poo.model;
 
-import java.util.ArrayList;
 import java.util.Collection;
+import java.util.LinkedList;
 
 public class Admin extends Persona implements IGestionarConsecionario{
 
-    private Collection<Admin> admins;
-    Cliente clientes;
-    Empleado empleados;
+    private Collection<Cliente> clientes;
+    private Collection<Empleado> empleados;
 
-    public Admin(String id, String gmail, String telefono, String palabraSecreta, int tipoPersona) {
-        super(id, gmail, telefono, palabraSecreta, tipoPersona);
-        admins = new ArrayList<>();
+    public Admin(String id, String gmail, String telefono, String palabraSecreta) {
+        super(id, gmail, telefono, palabraSecreta);
+        this.empleados = new LinkedList<>();
+        this.clientes = new LinkedList<>();
     }
 
     public boolean crearEmpleado(Empleado empleado) {
         boolean centinela = false;
         if (!verificarEmpleado(empleado.getId())) {
-            empleados.getEmpleados().add(empleado);
+            empleados.add(empleado);
             centinela = true;
         }
         return centinela;
@@ -25,9 +25,9 @@ public class Admin extends Persona implements IGestionarConsecionario{
 
     public boolean eliminarEmpleado(String cedula) {
         boolean centinela = false;
-        for (Empleado empleado : empleados.getEmpleados()) {
+        for (Empleado empleado : empleados) {
             if (empleado.getId().equals(cedula)) {
-                empleados.getEmpleados().remove(empleado);
+                empleados.remove(empleado);
                 centinela = true;
                 break;
             }
@@ -37,7 +37,7 @@ public class Admin extends Persona implements IGestionarConsecionario{
 
     public boolean verificarEmpleado(String cedula) {
         boolean centinela = false;
-        for (Empleado empleado : empleados.getEmpleados()) {
+        for (Empleado empleado : empleados) {
             if (empleado.getId().equals(cedula)) {
                 centinela = true;
             }
@@ -47,7 +47,7 @@ public class Admin extends Persona implements IGestionarConsecionario{
 
     public boolean actualizarEmpleado(String cedula, Empleado actualizado) {
         boolean centinela = false;
-        for (Empleado empleado : empleados.getEmpleados()) {
+        for (Empleado empleado : empleados) {
             if (empleado.getId().equals(cedula)) {
                 empleado.setId(actualizado.getId());
                 empleado.setGmail(actualizado.getGmail());
@@ -64,7 +64,7 @@ public class Admin extends Persona implements IGestionarConsecionario{
     public boolean crearCliente(Cliente cliente) {
         boolean centinela = false;
         if (!verificarCliente(cliente.getId())) {
-            clientes.getClientes().add(cliente);
+            clientes.add(cliente);
             centinela = true;
         }
         return centinela;
@@ -73,9 +73,9 @@ public class Admin extends Persona implements IGestionarConsecionario{
     @Override
     public boolean eliminarCliente(String cedula) {
         boolean centinela = false;
-        for (Cliente cliente : clientes.getClientes()) {
+        for (Cliente cliente : clientes) {
             if (cliente.getId().equals(cedula)) {
-                clientes.getClientes().remove(cliente);
+                clientes.remove(cliente);
                 centinela = true;
                 break;
             }
@@ -86,7 +86,7 @@ public class Admin extends Persona implements IGestionarConsecionario{
     @Override
     public boolean verificarCliente(String cedula) {
         boolean centinela = false;
-        for (Cliente cliente : clientes.getClientes()) {
+        for (Cliente cliente : clientes) {
             if (cliente.getId().equals(cedula)) {
                 centinela = true;
             }
@@ -97,7 +97,7 @@ public class Admin extends Persona implements IGestionarConsecionario{
     @Override
     public boolean actualizarCliente(String cedula, Cliente actualizado) {
         boolean centinela = false;
-        for (Cliente cliente : clientes.getClientes()) {
+        for (Cliente cliente : clientes) {
             if (cliente.getId().equals(cedula)) {
                 cliente.setId(actualizado.getId());
                 cliente.setGmail(actualizado.getGmail());
@@ -122,14 +122,6 @@ public class Admin extends Persona implements IGestionarConsecionario{
         throw new UnsupportedOperationException("Unimplemented method 'eliminarAlquiler'");
     }
 
-    public Collection<Admin> getAdmins() {
-        return admins;
-    }
-
-    public void setAdmins(Collection<Admin> admins) {
-        this.admins = admins;
-    }
-
     @Override
     public boolean crearCompra(Vehiculo vehiculo) {
         // TODO Auto-generated method stub
@@ -140,5 +132,21 @@ public class Admin extends Persona implements IGestionarConsecionario{
     public boolean eliminarCompra(Vehiculo vehiculo) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'eliminarCompra'");
+    }
+
+    public Collection<Empleado> getEmpleados() {
+        return empleados;
+    }
+
+    public void setEmpleados(Collection<Empleado> empleados) {
+        this.empleados = empleados;
+    }
+
+    public Collection<Cliente> getClientes() {
+        return clientes;
+    }
+
+    public void setClientes(Collection<Cliente> clientes) {
+        this.clientes = clientes;
     }
 }

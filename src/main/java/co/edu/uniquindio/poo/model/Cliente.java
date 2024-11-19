@@ -5,21 +5,11 @@ import java.util.Collection;
 
 public class Cliente extends Persona{
 
-    private Collection<Cliente> clientes;
     private Collection<Vehiculo> vehiculos;
 
-    public Cliente(String id, String gmail, String telefono, String palabraSecreta, int tipoPersona) {
-        super(id, gmail, telefono, palabraSecreta, tipoPersona);
-        clientes = new ArrayList<>();
+    public Cliente(String id, String gmail, String telefono, String palabraSecreta) {
+        super(id, gmail, telefono, palabraSecreta);
         vehiculos = new ArrayList<>();
-    }
-
-    public Collection<Cliente> getClientes() {
-        return clientes;
-    }
-
-    public void setClientes(Collection<Cliente> clientes) {
-        this.clientes = clientes;
     }
 
     public Collection<Vehiculo> getVehiculos() {

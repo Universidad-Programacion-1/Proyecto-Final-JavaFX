@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="413.0" prefWidth="527.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.ClienteViewController">
+   <children>
+   <Label fx:id="btnAtras" layoutX="477.0" layoutY="6.0" onMouseClicked="#onIniciaeSesion" prefHeight="17.0" prefWidth="46.0" text="Log out" textFill="#e11010" />
+      <TableView fx:id="tblListCliente" layoutX="5.0" layoutY="139.0" prefHeight="260.0" prefWidth="517.0">
+        <columns>
+          <TableColumn fx:id="tbcCedula" prefWidth="94.0" text="Cedula" />
+          <TableColumn fx:id="tbcCorreo" prefWidth="82.0" text="Correo" />
+            <TableColumn fx:id="tbcPalabraSecreta" prefWidth="133.0" text="Palabra Secreta" />
+            <TableColumn fx:id="tbcTelefono" prefWidth="101.0" text="Telefono" />
+        </columns>
+      </TableView>
+      <Label fx:id="btnAtras1" layoutX="152.0" layoutY="15.0" onMouseClicked="#onIniciaeSesion" prefHeight="45.0" prefWidth="231.0" text="Menu Clientes">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

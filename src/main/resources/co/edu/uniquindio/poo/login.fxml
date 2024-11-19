@@ -12,14 +12,14 @@
 
 <VBox alignment="CENTER" prefHeight="399.0" prefWidth="356.0" spacing="20.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.LoginViewController">
    <children>
-      <Label fx:id="txtTitleVehiculos" graphicTextGap="5.0" prefHeight="41.0" prefWidth="130.0" style="-: center;" text="Iniciar Sesion" textAlignment="RIGHT" textOverrun="CENTER_ELLIPSIS">
+      <Label fx:id="txtTitleLogin" graphicTextGap="5.0" prefHeight="41.0" prefWidth="130.0" style="-: center;" text="Iniciar Sesion" textAlignment="RIGHT" textOverrun="CENTER_ELLIPSIS">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
       <Pane prefHeight="274.0" prefWidth="572.0">
          <children>
-            <TextField layoutX="128.0" layoutY="23.0" promptText="Ingrese el correo" />
+            <TextField fx:id="txtCorreo" layoutX="128.0" layoutY="23.0" promptText="Ingrese el correo" />
             <Label layoutX="29.0" layoutY="23.0" prefHeight="25.0" prefWidth="58.0" text="Usuario:">
                <font>
                   <Font size="15.0" />
@@ -30,9 +30,9 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <TextField layoutX="128.0" layoutY="64.0" promptText="Ingrese la Contraseña" />
-            <Button fx:id="btnIniciarSesion" layoutX="112.0" layoutY="137.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="93.0" text="Iniciar sesión" />
-            <Label fx:id="txtOlvidoContrasena" layoutX="89.0" layoutY="176.0" prefHeight="25.0" prefWidth="149.0" text="Olvido la Contraseña?" textFill="#275a9e">
+            <TextField fx:id="txtContrasena" layoutX="128.0" layoutY="64.0" promptText="Ingrese la Contraseña" />
+            <Button fx:id="btnIniciarSesion" layoutX="112.0" layoutY="137.0" mnemonicParsing="false" onAction="#onIniciarSesion" prefHeight="25.0" prefWidth="93.0" text="Iniciar sesión" />
+            <Label fx:id="txtOlvidoContrasena" layoutX="89.0" layoutY="176.0" onMouseClicked="#onOlvidoContrasena" prefHeight="25.0" prefWidth="149.0" text="Olvido la Contraseña?">
                <font>
                   <Font size="15.0" />
                </font>

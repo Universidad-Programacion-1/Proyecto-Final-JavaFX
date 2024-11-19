@@ -1,17 +1,24 @@
 package co.edu.uniquindio.poo.model;
 
 import java.util.Collection;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 
 public class Consecionario {
     
+    private Collection<Admin> admins;
+    private Collection<Empleado> empleados;
+    private Collection<Cliente> clientes;
+    int tipoPersona;
     private String nombre;
-    Cliente clientes;
-    Empleado empleados;
-    Admin admins;
+    Empleado empleado1;
+    Admin admin1;
 
     public Consecionario(String nombre) {
         this.nombre = nombre;
+        this.admins = new LinkedList<>();
+        this.empleados = new LinkedList<>();
+        this.clientes = new LinkedList<>();
         //personas = new LinkedList<>();
     }
 
@@ -24,19 +31,25 @@ public class Consecionario {
     }
 
     public boolean crearAdmin(Admin admin) {
+        System.out.println(admin);
         boolean centinela = false;
         if (!verificarAdmin(admin.getId())) {
-            admins.getAdmins().add(admin);
+            admins.add(admin);
             centinela = true;
         }
         return centinela;
     }
 
+    public int tipoPersona(){
+        int tipo = tipoPersona;
+        return tipo;
+    }
+
     public boolean eliminarAdmin(String cedula) {
         boolean centinela = false;
-        for (Admin admin : admins.getAdmins()) {
+        for (Admin admin : admins) {
             if (admin.getId().equals(cedula)) {
-                admins.getAdmins().remove(admin);
+                admins.remove(admin);
                 centinela = true;
                 break;
             }
@@ -46,7 +59,7 @@ public class Consecionario {
 
     public boolean verificarAdmin(String cedula) {
         boolean centinela = false;
-        for (Admin admin : admins.getAdmins()) {
+        for (Admin admin : admins) {
             if (admin.getId().equals(cedula)) {
                 centinela = true;
             }
@@ -56,7 +69,7 @@ public class Consecionario {
 
     public boolean actualizarAdmin(String cedula, Admin actualizado) {
         boolean centinela = false;
-        for (Admin admin : admins.getAdmins()) {
+        for (Admin admin : admins) {
             if (admin.getId().equals(cedula)) {
                 admin.setId(actualizado.getId());
                 admin.setGmail(actualizado.getGmail());
@@ -71,40 +84,78 @@ public class Consecionario {
 
     public boolean palabraSecreta(String palabra){
         boolean centinela=false;
-        if (clientes.getClientes().stream().anyMatch(cliente -> cliente.getPalabraSecreta().equals(palabra))) {
-            centinela = true;
-        }else if (empleados.getEmpleados().stream().anyMatch(empleado -> empleado.getPalabraSecreta().equals(palabra))) {
-            centinela = true;
-        }else if (admins.getAdmins().stream().anyMatch(admin -> admin.getPalabraSecreta().equals(palabra))) {
-            centinela = true;
-        }
+        // if (clientes.getPalabraSecreta().equals(palabra)) {
+        //     centinela = true;
+        // }else if (empleados.stream().anyMatch(empleado -> empleado.getPalabraSecreta().equals(palabra))) {
+        //     centinela = true;
+        // }else if (admins.stream().anyMatch(admin -> admin.getPalabraSecreta().equals(palabra))) {
+        //     centinela = true;
+        // }
         return centinela;
     }
 
     public int login(String correo, String contrasena){
-        int tipoPersona = 0;
-        if (clientes.getClientes().stream().anyMatch(cliente -> cliente.getGmail().equals(correo) && cliente.getPassword().equals(contrasena))) {
-            tipoPersona = 1;
-        }else if (empleados.getEmpleados().stream().anyMatch(empleado -> empleado.getGmail().equals(correo) && empleado.getPassword().equals(contrasena))) {
-            tipoPersona = 2;
-        }else if (admins.getAdmins().stream().anyMatch(admin -> admin.getGmail().equals(correo) && admin.getPassword().equals(contrasena))) {
-            tipoPersona = 3;
+        //verificaUser(correo, contrasena);
+        // System.out.println(correo + contrasena);
+        int tipo = 0;
+        System.out.println(empleados);
+        // System.err.println("Lista de clientes"+ clientes.getClientes());
+        // System.err.println("Lista de Empleados"+ empleados);
+        // System.err.println("Lista de Admins"+ admins);
+        for (Admin admin : admins) {
+            if (admin.getGmail().equals(correo) && admin.getId().equals(contrasena)) {
+                tipo = 3;
+                tipoPersona = tipo;
+                admin1 = admin;
+            }
+        }
+        for (Cliente cliente : clientes) {
+            if (cliente.getGmail().equals(correo) && cliente.getId().equals(contrasena)) {
+                tipo = 1;
+                tipoPersona = tipo;
+            }
+        }
+        for (Empleado empleado : admin1.getEmpleados()) {
+            if (empleado.getGmail().equals(correo) && empleado.getId().equals(contrasena)) {
+                tipo = 2;
+                tipoPersona = tipo;
+                empleado1 = empleado;
+            }
+
+        }
+        return tipo;
+    }
+    public Collection<Empleado> listarEmpleados(){
+        return admin1.getEmpleados();
+    }
+    public Collection<Cliente> listarClientes(){
+        Collection<Cliente> lista = new LinkedList<>();
+        for (Cliente cliente : admin1.getClientes()) {
+            lista.add(cliente);
+        }
+        for (Cliente cliente : empleado1.getClientes()) {
+            lista.add(cliente);
         }
 
-        return tipoPersona;
+        return admin1.getClientes();
     }
+
+    // public Collection<Cliente> listarClientesE(){
+    //     return empleado1.getClientes();
+    // }
 
     public boolean agregarEmpleado(Empleado empleado){
         boolean centinela=false;
-        if (admins.crearEmpleado(empleado)) {
-            centinela = true;   
+        if (admin1.crearEmpleado(empleado)) {
+            // empleados.add(empleado);
+            centinela = true;
         }
         return centinela;
     }
 
     public boolean eliminarEmpleado(String cedula){
         boolean centinela=false;
-        if (admins.eliminarEmpleado(cedula)) {
+        if (admin1.eliminarEmpleado(cedula)) {
             centinela = true;
         }
         return centinela;
@@ -112,59 +163,61 @@ public class Consecionario {
 
     public boolean actualizarEmpleado(String cedula, Empleado empleado){
         boolean centinela=false;
-        if (admins.actualizarEmpleado(cedula, empleado)) {
+        if (admin1.actualizarEmpleado(cedula, empleado)) {
             centinela = true;
         }
         return centinela;
     }
 
-
-    public boolean agregarClienteA(Cliente cliente){
+    public boolean eliminarCliente(String cedula){
         boolean centinela=false;
-        if (admins.crearCliente(cliente)) {
-            centinela = true;   
+        if (tipoPersona == 2) {
+            if (empleado1.eliminarCliente(cedula)) {
+                centinela = true;
+            }   
+        }else if (tipoPersona == 3) {
+            if (admin1.eliminarCliente(cedula)) {
+                centinela = true;   
+            }
         }
         return centinela;
     }
 
-    public boolean eliminarClienteA(String cedula){
+    public boolean actualizarCliente(String cedula, Cliente empleado){
         boolean centinela=false;
-        if (admins.eliminarCliente(cedula)) {
-            centinela = true;
+        if (tipoPersona == 2) {
+            if (empleado1.actualizarCliente(cedula, empleado)) {
+                centinela = true;
+            }   
+        }else if (tipoPersona == 3) {
+            if (admin1.actualizarCliente(cedula, empleado)) {
+                centinela = true;   
+            }
         }
         return centinela;
     }
 
-    public boolean actualizarClienteA(String cedula, Cliente empleado){
+    
+    public boolean agregarCliente(Cliente cliente){
         boolean centinela=false;
-        if (admins.actualizarCliente(cedula, empleado)) {
-            centinela = true;
+        if (tipoPersona == 2) {
+            if (empleado1.crearCliente(cliente)) {
+                centinela = true;
+            }
+        }else if (tipoPersona == 3) {
+            if (admin1.crearCliente(cliente)) {
+                centinela = true;   
+            }
         }
         return centinela;
     }
 
-    public boolean agregarClienteE(Cliente cliente){
-        boolean centinela=false;
-        if (empleados.crearCliente(cliente)) {
-            centinela = true;
-        }
-        return centinela;
+    public Collection<Admin> getAdmins() {
+        return admins;
     }
 
-    public boolean eliminarClienteE(String cedula){
-        boolean centinela=false;
-        if (empleados.eliminarCliente(cedula)) {
-            centinela = true;
-        }
-        return centinela;
-    }
-
-    public boolean actualizarClienteE(String cedula, Cliente empleado){
-        boolean centinela=false;
-        if (empleados.actualizarCliente(cedula, empleado)) {
-            centinela = true;
-        }
-        return centinela;
+    public void setAdmins(Collection<Admin> admins) {
+        this.admins = admins;
     }
 
     
